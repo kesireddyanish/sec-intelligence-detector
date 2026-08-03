@@ -20,4 +20,11 @@ class InsiderTrade(Base):
     price = Column(Float)
     total_value = Column(Float)
 
+class WatchlistCompany(Base):
+    __tablename__ = "watchlist_companies"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, unique=True, index=True)
+    cik = Column(String, unique=True)
+
 Base.metadata.create_all(bind=engine)
